@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Snowing Ceramics — thoughtfully handmade ceramics for everyday rituals.">
+  <title>Snowing Ceramics — Objects for Everyday</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f8f7f3;
+      --ink: #302e29;
+      --muted: #817d73;
+      --line: #e6e2d9;
+      --accent: #e9e3d8;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .announcement {
+      text-align: center;
+      padding: 9px 16px;
+      background: #e9e5dc;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+    }
+
+    header {
+      height: 82px;
+      padding: 0 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      letter-spacing: -0.8px;
+    }
+
+    nav { display: flex; gap: 28px; font-size: 12px; }
+    nav a:hover { opacity: .6; }
+
+    .hero {
+      padding: 42px 6% 76px;
+      text-align: center;
+    }
+
+    .hero-image {
+      min-height: 390px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background:
+        radial-gradient(ellipse at 50% 90%, #d9cbb8 0%, transparent 43%),
+        linear-gradient(135deg, #eeece5, #e3dfd5 50%, #f1eee7);
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 470px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .image-note {
+      color: #766e61;
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+      padding: 30px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    h1 { font-size: clamp(36px, 5vw, 62px); margin: 28px 0 14px; }
+    .hero p { color: var(--muted); max-width: 440px; margin: 0 auto 27px; }
+
+    .button {
+      display: inline-block;
+      padding: 13px 26px;
+      border: 1px solid var(--ink);
+      font-size: 11px;
+      letter-spacing: 1px;
+      transition: background .2s, color .2s;
+    }
+
+    .button:hover { background: var(--ink); color: white; }
+
+    section { padding: 70px 6%; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 28px;
+      gap: 20px;
+    }
+
+    h2 { font-size: clamp(28px, 3vw, 38px); margin-bottom: 8px; }
+    .section-head p { color: var(--muted); margin-bottom: 0; }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .product-photo {
+      aspect-ratio: 4 / 5;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .product-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .5s;
+    }
+
+    .product-card:hover img { transform: scale(1.035); }
+
+    .placeholder {
+      padding: 20px;
+      color: #817768;
+      text-align: center;
+      font-family: "Playfair Display", serif;
+      font-size: 17px;
+    }
+
+    .product-info { padding: 13px 0 0; }
+    .product-info h3 { font-size: 19px; margin-bottom: 3px; }
+    .product-info p { color: var(--muted); font-size: 12px; margin-bottom: 6px; }
+    .price { font-size: 12px; }
+
+    .story {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: #eeece5;
+      padding: 0;
+    }
+
+    .story-visual {
+      min-height: 360px;
+      background: linear-gradient(145deg, #d6c8b5, #ece6dc 60%, #c8b9a6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 24px;
+      color: #756b5e;
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+    }
+
+    .story-visual img {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .story-copy {
+      padding: clamp(35px, 6vw, 85px);
+      align-self: center;
+    }
+
+    .story-copy h2 { margin: 15px 0 20px; }
+    .story-copy p { color: #706c63; }
+
+    .newsletter { text-align: center; padding-top: 85px; padding-bottom: 85px; }
+    .newsletter p { color: var(--muted); max-width: 420px; margin: 12px auto 25px; }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 30px 6%;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    @media (max-width: 650px) {
+      header { height: auto; min-height: 75px; padding: 18px 5%; flex-wrap: wrap; gap: 12px; }
+      .logo { font-size: 22px; }
+      nav { gap: 15px; font-size: 11px; }
+      .hero { padding: 22px 5% 48px; }
+      .hero-image { min-height: 280px; }
+      .hero-image img { height: 330px; }
+      section { padding: 50px 5%; }
+      .products { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 12px; }
+      .section-head { align-items: start; flex-direction: column; }
+      .story { grid-template-columns: 1fr; }
+      .story-visual, .story-visual img { min-height: 270px; }
+      footer { padding: 25px 5%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">HANDMADE WITH CARE · SMALL BATCH CERAMICS</div>
+
+  <header>
+    <a class="logo" href="#">Snowing Ceramics</a>
+    <nav>
+      <a href="#shop">Shop</a>
+      <a href="#story">Our Story</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="hero-image">
+        <div class="image-note">Your ceramics, in their own quiet moment.</div>
+      </div>
+      <div class="eyebrow" style="margin-top:35px">Objects for everyday rituals</div>
+      <h1>Made slowly.<br>Kept forever.</h1>
+      <p>Thoughtfully handmade ceramics that bring a little more beauty to the everyday.</p>
+      <a class="button" href="#shop">EXPLORE THE COLLECTION</a>
+    </div>
+
+    <section id="shop">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">The collection</div>
+          <h2>Little things, made by hand.</h2>
+          <p>One-of-a-kind pieces for everyday living.</p>
+        </div>
+        <a href="#contact">Inquire about a piece ↗</a>
+      </div>
+
+      <div class="products">
+        <article class="product-card">
+          <div class="product-photo"><div class="placeholder">Add your product photo</div></div>
+          <div class="product-info">
+            <h3>Everyday Vessel</h3>
+            <p>Handmade ceramic · Small batch</p>
+            <div class="price">C$ —</div>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-photo"><div class="placeholder">Add your product photo</div></div>
+          <div class="product-info">
+            <h3>Quiet Morning Cup</h3>
+            <p>Handmade ceramic · One of a kind</p>
+            <div class="price">C$ —</div>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-photo"><div class="placeholder">Add your product photo</div></div>
+          <div class="product-info">
+            <h3>Soft Form Bowl</h3>
+            <p>Handmade ceramic · Small batch</p>
+            <div class="price">C$ —</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="story" class="story">
+      <div class="story-visual">A glimpse into the studio</div>
+      <div class="story-copy">
+        <div class="eyebrow">Our story</div>
+        <h2>Beauty in the imperfect.</h2>
+        <p>Snowing Ceramics is a small pottery studio devoted to thoughtful forms, tactile textures, and the quiet beauty of handmade objects.</p>
+        <p>Each piece is shaped with care. Subtle variations are part of what makes every piece unique.</p>
+        <a class="button" href="#contact">GET TO KNOW US</a>
+      </div>
+    </section>
+
+    <section id="contact" class="newsletter">
+      <div class="eyebrow">Stay in the loop</div>
+      <h2>A little note from our studio.</h2>
+      <p>New pieces are released in small batches. Follow along for studio updates and upcoming collections.</p>
+      <a class="button" href="mailto:hello@snowingceramics.com">GET IN TOUCH</a>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> Snowing Ceramics</span>
+    <span>Made slowly, with care.</span>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
